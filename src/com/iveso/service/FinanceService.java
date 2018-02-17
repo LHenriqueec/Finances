@@ -21,6 +21,11 @@ public class FinanceService {
 		this.finances.add(finance);
 	}
 	
+	public void remove(Finance finance) {
+		this.dao.remove(finance);
+		this.finances.remove(finance);
+	}
+	
 	public List<Finance> getFinances() {
 		return finances;
 	}
