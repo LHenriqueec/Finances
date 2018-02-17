@@ -1,0 +1,12 @@
+/build/
+/target/
+/bin/
+/.idea/
+/.settings/
+/out
+.project
+.tern-project
+Finances.iml
+hs_err_pid*
+/web/WEB-INF/lib/
+.classpath
