@@ -2,10 +2,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
 
-<h:head></h:head> 
-<h:body> 
-	<h1>Luiz Henrique</h1>
+<h:head>
+	<title>Controle Financeiro</title>
+</h:head> 
+<h:body>
+
+	<p:dialog header="Cadastro Lançamento" widgetVar="modal_lancamento" modal="true" minWidth="200">
+		This modal dialog;
+	</p:dialog>
+	
+	<p:outputLabel value="Lançamentos" />
+	<p:commandButton type="button" icon="fa fa-plus" onclick="PF('modal_lancamento').show()" />
+
+	<div style="float:right" >
+		<p:outputLabel for="mask" value="Data:" /> 
+		<p:calendar id="mask" value="" mask="true" pattern="dd/MM/yyyy" placeholder="Filtrar data" />
+	</div>
+	
+	<div>
+		<p:dataTable emptyMessage="Nenhum lançamento" rows="10" var="finance" value="">
+			<p:column headerText="Data">
+				<h:outputText value="17/02/2018" />
+			</p:column>
+			<p:column headerText="Descrição">
+				<h:outputText value="Dízimo" />
+			</p:column>
+			<p:column headerText="Grupo">
+				<h:outputText value="Dízimo" />
+			</p:column>
+			<p:column headerText="Solicitante">
+				<h:outputText value="Mádia" />
+			</p:column>
+			<p:column headerText="Saída">
+				
+			</p:column>
+			<p:column headerText="Entrada">
+				<h:outputText value="R$ 78,53" />
+			</p:column>
+			<p:column headerText="Saldo">
+				<h:outputText value="R$ 78,53" />
+			</p:column>
+			
+			<f:facet name="footer">
+				<div>
+					<h:outputText value="Receita: " />
+					<h:outputText value="R$ 78,53    " />
+				</div>
+				<div>
+					<h:outputText value="Despesa: " />
+					<h:outputText value="R$ 0,00" />
+				</div>		
+			</f:facet>
+		</p:dataTable>
+	</div>
 </h:body> 
 </html>
